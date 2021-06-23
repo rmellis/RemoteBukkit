@@ -1,4 +1,4 @@
-# TelnetMC - Forked from RemoteBukkit - Work in progress....
+# TelnetMC - Forked from RemoteBukkit - Work in progress.... 　　　　Pre-Release Alpha builds can be found in the release section
 ## General
 RemoteBukkit allows admins to, with the help of a plugin, remotely use the server's console. You do this by running a client on your computer and you provide this client with the hostname and port on which the RemoteBukkit plugin's server is running. Of course you will also need to provide the client with the server's username and password (set up in the plugin config file) for security.
 
