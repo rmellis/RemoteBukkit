@@ -1,6 +1,0 @@
-port: 25564
-verbose: true
-logsize: 500
-users:
-  - user: username
-    pass: password
