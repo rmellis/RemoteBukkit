@@ -1,0 +1,4 @@
+name: RemoteBukkit
+main: me.escortkeel.remotebukkit.plugin.RemoteBukkitPlugin
+version: ${pom.version}
+author: Keeley Hoek (escortkeel)
