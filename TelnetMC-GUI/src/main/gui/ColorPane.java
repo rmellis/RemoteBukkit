@@ -10,31 +10,29 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
-import java.awt.Color;
-
-import static java.awt.Color.getHSBColor;
+import java.awt.*;
 /**
  * @author Keeley Hoek (escortkeel)
  * @update rmellis - TelnetMC
  **/
 public class ColorPane extends JTextPane {
 
-    private static final Color D_Black = getHSBColor(0.000f, 0.000f, 0.000f);
-    private static final Color D_Red = getHSBColor(0.000f, 1.000f, 0.502f);
-    private static final Color D_Blue = getHSBColor(0.667f, 1.000f, 0.502f);
-    private static final Color D_Magenta = getHSBColor(0.833f, 1.000f, 0.502f);
-    private static final Color D_Green = getHSBColor(0.333f, 1.000f, 0.502f);
-    private static final Color D_Yellow = getHSBColor(0.167f, 1.000f, 0.502f);
-    private static final Color D_Cyan = getHSBColor(0.500f, 1.000f, 0.502f);
-    private static final Color D_White = getHSBColor(0.000f, 0.000f, 0.753f);
-    private static final Color B_Black = getHSBColor(0.000f, 0.000f, 0.502f);
-    private static final Color B_Red = getHSBColor(0.000f, 1.000f, 1.000f);
-    private static final Color B_Blue = getHSBColor(0.667f, 1.000f, 1.000f);
-    private static final Color B_Magenta = getHSBColor(0.833f, 1.000f, 1.000f);
-    private static final Color B_Green = getHSBColor(0.333f, 1.000f, 1.000f);
-    private static final Color B_Yellow = getHSBColor(0.167f, 1.000f, 1.000f);
-    private static final Color B_Cyan = getHSBColor(0.500f, 1.000f, 1.000f);
-    private static final Color B_White = getHSBColor(0.000f, 0.000f, 1.000f);
+    private static final Color D_Black = Color.getHSBColor(0.000f, 0.000f, 0.000f);
+    private static final Color D_Red = Color.getHSBColor(0.000f, 1.000f, 0.502f);
+    private static final Color D_Blue = Color.getHSBColor(0.667f, 1.000f, 0.502f);
+    private static final Color D_Magenta = Color.getHSBColor(0.833f, 1.000f, 0.502f);
+    private static final Color D_Green = Color.getHSBColor(0.333f, 1.000f, 0.502f);
+    private static final Color D_Yellow = Color.getHSBColor(0.167f, 1.000f, 0.502f);
+    private static final Color D_Cyan = Color.getHSBColor(0.500f, 1.000f, 0.502f);
+    private static final Color D_White = Color.getHSBColor(0.000f, 0.000f, 0.753f);
+    private static final Color B_Black = Color.getHSBColor(0.000f, 0.000f, 0.502f);
+    private static final Color B_Red = Color.getHSBColor(0.000f, 1.000f, 1.000f);
+    private static final Color B_Blue = Color.getHSBColor(0.667f, 1.000f, 1.000f);
+    private static final Color B_Magenta = Color.getHSBColor(0.833f, 1.000f, 1.000f);
+    private static final Color B_Green = Color.getHSBColor(0.333f, 1.000f, 1.000f);
+    private static final Color B_Yellow = Color.getHSBColor(0.167f, 1.000f, 1.000f);
+    private static final Color B_Cyan = Color.getHSBColor(0.500f, 1.000f, 1.000f);
+    private static final Color B_White = Color.getHSBColor(0.000f, 0.000f, 1.000f);
     private static final Color cReset = D_White;
     private static Color colorCurrent = cReset;
     private String remaining = "";
@@ -90,40 +88,23 @@ public class ColorPane extends JTextPane {
     public static Color getANSIColor(String ansiColor) {
         if (ansiColor.equals("\u001B[30;1m")) {
             return B_Black;
-        } else if (ansiColor.equals("\u001B[31;1m")) {
-            return B_Red;
-        } else if (ansiColor.equals("\u001B[32;1m")) {
-            return B_Green;
-        } else if (ansiColor.equals("\u001B[33;1m")) {
-            return B_Yellow;
-        } else if (ansiColor.equals("\u001B[34;1m")) {
-            return B_Blue;
-        } else if (ansiColor.equals("\u001B[35;1m")) {
-            return B_Magenta;
-        } else if (ansiColor.equals("\u001B[36;1m")) {
-            return B_Cyan;
-        } else if (ansiColor.equals("\u001B[37;1m")) {
-            return B_White;
-        } else if (ansiColor.startsWith("\u001B[30")) {
-            return D_Black;
-        } else if (ansiColor.startsWith("\u001B[31")) {
-            return D_Red;
-        } else if (ansiColor.startsWith("\u001B[32")) {
-            return D_Green;
-        } else if (ansiColor.startsWith("\u001B[33")) {
-            return D_Yellow;
-        } else if (ansiColor.startsWith("\u001B[34")) {
-            return D_Blue;
-        } else if (ansiColor.startsWith("\u001B[35")) {
-            return D_Magenta;
-        } else if (ansiColor.startsWith("\u001B[36")) {
-            return D_Cyan;
-        } else if (ansiColor.startsWith("\u001B[37")) {
-            return D_White;
-        } else if (ansiColor.equals("\u001B[m")) {
-            return cReset;
-        } else {
-            return B_White;
+        } else if (ansiColor.equals("\u001B[31;1m")) { return B_Red;
+        } else if (ansiColor.equals("\u001B[32;1m")) { return B_Green;
+        } else if (ansiColor.equals("\u001B[33;1m")) { return B_Yellow;
+        } else if (ansiColor.equals("\u001B[34;1m")) { return B_Blue;
+        } else if (ansiColor.equals("\u001B[35;1m")) { return B_Magenta;
+        } else if (ansiColor.equals("\u001B[36;1m")) { return B_Cyan;
+        } else if (ansiColor.equals("\u001B[37;1m")) { return B_White;
+        } else if (ansiColor.startsWith("\u001B[30")) { return D_Black;
+        } else if (ansiColor.startsWith("\u001B[31")) { return D_Red;
+        } else if (ansiColor.startsWith("\u001B[32")) { return D_Green;
+        } else if (ansiColor.startsWith("\u001B[33")) { return D_Yellow;
+        } else if (ansiColor.startsWith("\u001B[34")) { return D_Blue;
+        } else if (ansiColor.startsWith("\u001B[35")) { return D_Magenta;
+        } else if (ansiColor.startsWith("\u001B[36")) { return D_Cyan;
+        } else if (ansiColor.startsWith("\u001B[37")) { return D_White;
+        } else if (ansiColor.equals("\u001B[m")) { return cReset;
+        } else { return B_White;
         }
     }
 }
