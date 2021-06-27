@@ -10,12 +10,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static java.util.Collections.unmodifiableList;
 
 /**
  * @author Keeley Hoek (escortkeel@gmail.com)
@@ -58,7 +58,7 @@ public class RemoteBukkitPlugin extends JavaPlugin {
             int num = 0;
             List<Map<String, Object>> usersSection = null;
             try {
-                usersSection = unmodifiableList((List<Map<String, Object>>) getConfig().getList("users"));
+                usersSection = Collections.unmodifiableList((List<Map<String, Object>>) getConfig().getList("users"));
             } catch (Exception ignored) {
             }
             if (usersSection == null) {
