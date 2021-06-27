@@ -61,7 +61,9 @@ public class RemoteBukkitPlugin extends JavaPlugin {
                 usersSection = unmodifiableList((List<Map<String, Object>>) getConfig().getList("users"));
             } catch (Exception ignored) {
             }
-            if (usersSection != null) {
+            if (usersSection == null) {
+                System.out.println("NULLL!");
+            } else {
                 for (Map<String, Object> entry : usersSection) {
                     num++;
                     try {
@@ -92,8 +94,6 @@ public class RemoteBukkitPlugin extends JavaPlugin {
                         log.log(Level.WARNING, "[TelnetMC] Could not parse user entry #" + num + ", ignoring it (this entry will be deleted).");
                     }
                 }
-            } else {
-                System.out.println("NULLL! OMGPOY!");
             }
 
             if (users.isEmpty()) {
