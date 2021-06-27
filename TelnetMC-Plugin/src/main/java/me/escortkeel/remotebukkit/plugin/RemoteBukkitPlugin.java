@@ -5,6 +5,9 @@
  */
 package me.escortkeel.remotebukkit.plugin;
 
+import org.apache.logging.log4j.LogManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +15,8 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.logging.log4j.LogManager;
-import org.bukkit.plugin.java.JavaPlugin;
+import static java.util.Collections.unmodifiableList;
+
 /**
  * @author Keeley Hoek (escortkeel@gmail.com)
  * @update rmellis - TelnetMC fork
@@ -50,12 +53,12 @@ public class RemoteBukkitPlugin extends JavaPlugin {
         log.log(Level.INFO, getDescription().getFullName().concat(" is enabled!"));
         logger.addAppender(appender);
 
-        int port = 25564;
+        int port = 25500;
         try {
             int num = 0;
             List<Map<String, Object>> usersSection = null;
             try {
-                usersSection = (List<Map<String, Object>>) getConfig().getList("users");
+                usersSection = unmodifiableList((List<Map<String, Object>>) getConfig().getList("users"));
             } catch (Exception ignored) {
             }
             if (usersSection != null) {
