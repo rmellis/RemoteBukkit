@@ -1,0 +1,6 @@
+address: ''
+port: 25501
+verbose: true
+logsize: 500
+username: 'user'
+password: 'changeme'
