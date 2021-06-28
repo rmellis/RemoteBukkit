@@ -1,5 +1,0 @@
-name: TelnetMC-Paper
-main: me.totalfreedom.bukkittelnet.BukkitTelnet
-version: 5.2.2
-description: Access your paper based Minecraft Server via the telnet protocol
-authors: [Keeley Hoek, bekvon, Madgeek1450, Prozza, rmellis]
